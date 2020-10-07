@@ -1,0 +1,58 @@
+﻿@model Assignment_MVC_App.Models.Session
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Session</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SessionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SessionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SessionTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SessionTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SessionDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SessionDetails)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.BookedUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookedUser)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SessionID }) |
+    @Html.ActionLink("Back to List", "SessionsView", "Sessions")
+</p>

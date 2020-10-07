@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Assignment_MVC_App.Models.Session>
+
+@{
+    ViewBag.Title = "Sessions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Sessions</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDetails)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.BookedUser)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDetails)
+                </td>
+                
+                <td align="center">
+                    <button type="button" class="btn btn-custom" onclick="location.href='@Url.Action("Details", "Sessions", new { id = item.SessionID })'">Details</button>
+                    <button type="button" class="btn btn-custom" onclick="location.href='@Url.Action("BookSession", "Sessions", new { id = item.SessionID })'">Book Session</button>
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.SessionID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.SessionID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SessionID })*@
+                </td>
+            </tr>
+        }
+    </tbody>
+    @{ViewBag.Token = "SessionsView"; }
+</table>
+@section Scripts {
+    @Scripts.Render("~/Scripts/DataTables/jquery.dataTables.js")
+    @Scripts.Render("~/Scripts/DataTables/dataTables.bootstrap.js")
+    <script>
+        $(document).ready(function () {
+            $('.table').DataTable();
+        });
+    </script>
+}
+<link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
+      rel="stylesheet" />

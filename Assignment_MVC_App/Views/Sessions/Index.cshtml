@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Assignment_MVC_App.Models.Session>
+
+@{
+    ViewBag.Title = "Post a Session";
+}
+
+<h2>Post a Session</h2>
+
+Login as a Trainer to post a session.
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SessionDetails)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.BookedUser)
+                </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SessionDetails)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.BookedUser)
+                    </td>*@
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SessionID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SessionID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SessionID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

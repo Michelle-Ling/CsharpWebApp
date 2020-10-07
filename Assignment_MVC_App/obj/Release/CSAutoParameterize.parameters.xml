@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:vitalfitness.database.windows.net,1433;Initial Catalog=aspnet-Assignment_MVC_App-20180919122757;Persist Security Info=False;User ID=michelle;Password=BuddingDev!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\pixie\\OneDrive\\Desktop\\MVC\ 2\\MVC\ App\\Assignment_MVC_App\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Vitality-Web.config Connection String" description="Vitality Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:vitalfitness.database.windows.net,1433;Initial Catalog=Vitality;Persist Security Info=False;User ID=michelle;Password=BuddingDev!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\pixie\\OneDrive\\Desktop\\MVC\ 2\\MVC\ App\\Assignment_MVC_App\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Vitality']/@connectionString" />
+  </parameter>
+  <parameter name="Vitality2-Web.config Connection String" description="Vitality2 Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:vitalfitness.database.windows.net,1433;Initial Catalog=Vitality;Persist Security Info=False;User ID=michelle;Password={your password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\pixie\\OneDrive\\Desktop\\MVC\ 2\\MVC\ App\\Assignment_MVC_App\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Vitality2']/@connectionString" />
+  </parameter>
+  <parameter name="Location-Web.config Connection String" description="Location Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:vitalfitness.database.windows.net,1433;Initial Catalog=Vitality;Persist Security Info=False;User ID=michelle;Password=BuddingDev!23;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\pixie\\OneDrive\\Desktop\\MVC\ 2\\MVC\ App\\Assignment_MVC_App\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Location']/@connectionString" />
+  </parameter>
+</parameters>

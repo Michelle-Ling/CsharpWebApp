@@ -1,0 +1,91 @@
+﻿@model Assignment_MVC_App.Models.Session
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Session</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SessionDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SessionDate, new { htmlAttributes = new { @class = "form-control dt1" } })
+            @Html.ValidationMessageFor(model => model.SessionDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SessionTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SessionTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SessionTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.SessionDetails, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.SessionDetails, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SessionDetails, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+        <div class="form-group">
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-custom" />
+            </div>
+
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script>
+            $(document).ready(function () {
+
+                $("#dt1").datepicker({
+                    dateFormat: "dd-M-yy",
+                    minDate: 0,
+                    onSelect: function (date) {
+                        var dt2 = $('#dt2');
+                        var startDate = $(this).datepicker('getDate');
+                        var minDate = $(this).datepicker('getDate');
+                        dt2.datepicker('setDate', minDate);
+                        startDate.setDate(startDate.getDate() + 30);
+                        //sets dt2 maxDate to the last day of 30 days window
+                        dt2.datepicker('option', 'maxDate', startDate);
+                        dt2.datepicker('option', 'minDate', minDate);
+                        $(this).datepicker('option', 'minDate', minDate);
+                    }
+                });
+                $('#dt2').datepicker({
+                    dateFormat: "dd-M-yy"
+                });
+            });
+        </script>
+       
+    }
